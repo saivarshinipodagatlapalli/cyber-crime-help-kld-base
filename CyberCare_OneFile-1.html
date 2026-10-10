@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
+<title>CyberCare | Cyber Crime Help Knowledge Base</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#070b18;--panel:#10182b;--cyan:#50f0e2;--purple:#a78bfa;--text:#edf3ff;--muted:#9aa8c4;--border:rgba(150,180,230,.2)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(ellipse at 12% 8%,#172349 0,transparent 42%),radial-gradient(ellipse at 95% 42%,#15253a 0,transparent 35%),var(--bg);font-family:'DM Sans',sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input{font:inherit}.nav{position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 7%;border-bottom:1px solid var(--border);background:#070b18eF;backdrop-filter:blur(12px)}.logo{font:700 23px 'Space Grotesk',sans-serif}.logo span,.hero h1 span{color:var(--cyan)}nav{display:flex;gap:24px;flex-wrap:wrap}nav a{color:var(--muted);font-size:13px}nav a:hover{color:var(--cyan)}.hero{text-align:center;padding:82px 20px 62px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--cyan)}h1,h2,h3{font-family:'Space Grotesk',sans-serif}h1{font-size:clamp(37px,6vw,64px);line-height:1.12;letter-spacing:-2px;margin:17px 0}.intro{max-width:600px;margin:0 auto 26px;color:var(--muted)}.search{max-width:690px;display:flex;gap:8px;margin:0 auto;padding:8px;background:var(--panel);border:1px solid #50f0e277;border-radius:14px;box-shadow:0 0 26px #50f0e21a}.search input{min-width:0;flex:1;background:transparent;border:0;outline:0;padding:12px;color:var(--text)}.search input::placeholder{color:#8190ad}.search button,.primary{border:0;border-radius:9px;padding:11px 17px;background:var(--cyan);color:#07121e;font-weight:700;cursor:pointer}.message{min-height:24px;color:#ffcf99;font-size:12px;margin:12px auto 0}.wrap{max-width:1120px;margin:auto;padding:42px 24px}.wrap h2{font-size:clamp(26px,4vw,35px);margin:8px 0 23px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:9px;min-height:145px;padding:20px;border:1px solid var(--border);border-radius:14px;background:linear-gradient(145deg,#111a30,#0b1121);color:var(--text);cursor:pointer;transition:.2s}.card:hover,.card:focus-visible{border-color:var(--cyan);box-shadow:0 0 22px #50f0e21b;transform:translateY(-2px)}.icon{font-size:25px;color:var(--cyan)}.card strong{font-size:14px}.card small{font-size:12px;color:var(--muted)}.answer{max-width:1072px;margin:15px auto 55px;padding:30px;background:var(--panel);border:1px solid var(--border);border-radius:17px}.answer h2{margin:8px 0 12px}.answer p,.answer li{color:#c0cbe0;font-size:14px}.answer li{margin:10px 0}.note{color:#ffcf99!important;font-size:12px!important}.official{display:inline-block;color:var(--cyan);font-weight:700;font-size:13px;margin:8px 18px 0 0}.emergency{text-align:center;border-top:1px solid var(--border)}.emergency p{color:var(--muted)}.primary{display:inline-block;margin:8px}.footer{border-top:1px solid var(--border);padding:30px 7%;font-size:12px;color:var(--muted)}.footer p{max-width:850px}.hidden{display:none!important}
+@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column;padding:15px 5%}nav{gap:16px}.hero{padding:58px 17px 38px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding:32px 17px}.answer{margin:10px 14px 38px;padding:22px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.card{min-height:0}.search{gap:4px}.search input{font-size:12px;padding:9px 6px}.search button{padding:10px;font-size:12px}.logo{font-size:21px}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#">✦ Cyber<span>Care</span></a>
+  <nav><a href="#home">Home</a><a href="#topics">Explore Problems</a><a href="#help">Get Help</a></nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="eyebrow">YOUR DIGITAL SAFETY COMPANION</div>
+  <h1>Cyber Problems?<br><span>Find the Right Help.</span></h1>
+  <p class="intro">Understand online threats, learn practical safety steps, and find trusted places to report cybercrime.</p>
+  <form class="search" id="searchForm">
+    <input id="searchInput" type="search" placeholder="Try: UPI fraud, phishing, hacked account..." aria-label="Search cybercrime topics">
+    <button type="submit">Search ↗</button>
+  </form>
+  <p class="message" id="message" aria-live="polite"></p>
+</section>
+<section class="wrap" id="topics">
+  <div class="eyebrow">KNOWLEDGE BASE</div><h2>What do you need help with?</h2>
+  <div class="grid">
+    <button class="card" data-id="upi"><span class="icon">₹</span><strong>UPI & Payment Fraud</strong><small>Money scams and payments</small></button>
+    <button class="card" data-id="phishing"><span class="icon">✉</span><strong>Phishing & Fake Links</strong><small>Suspicious messages and emails</small></button>
+    <button class="card" data-id="account"><span class="icon">◎</span><strong>Hacked Accounts</strong><small>Social media and email safety</small></button>
+    <button class="card" data-id="shopping"><span class="icon">◇</span><strong>Online Shopping Scams</strong><small>Fake stores and offers</small></button>
+    <button class="card" data-id="password"><span class="icon">⬡</span><strong>Password & Privacy</strong><small>Protect your personal data</small></button>
+    <button class="card" data-id="report"><span class="icon">ⓘ</span><strong>Report Cybercrime</strong><small>Official reporting information</small></button>
+  </div>
+</section>
+<section class="answer" id="answer" aria-live="polite">
+  <div class="eyebrow">PERSONALIZED GUIDANCE</div>
+  <h2 id="answerTitle">Cyber Safety Answers</h2>
+  <p id="answerIntro">Select a topic or search for your problem to see guidance.</p>
+  <ol id="answerSteps"></ol>
+  <p class="note" id="answerNote">This educational website is not a live fraud detector or an official government service.</p>
+  <a class="official" href="https://www.cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">Official Cybercrime Portal ↗</a>
+</section>
+<section class="wrap emergency" id="help">
+  <div class="eyebrow">NEED HELP IN INDIA?</div><h2>Act quickly. Use official channels.</h2>
+  <p>For financial cyber fraud, call <strong>1930</strong> promptly and follow the official reporting procedure.</p>
+  <a class="primary" href="tel:1930">Call 1930</a>
+  <a class="official" href="https://www.cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">Report at cybercrime.gov.in ↗</a>
+</section>
+</main>
+<footer class="footer">
+  <a class="logo" href="#">✦ Cyber<span>Care</span></a>
+  <p>Educational project for cyber awareness and safety. Guidance is general and may not fit every situation. Verify critical details through official sources. Reporting promptly may help, but recovery of money is not guaranteed.</p>
+</footer>
+<script>
+const kb = {
+  upi:{
+    title:"UPI & Payment Fraud",keywords:["upi","payment","money","bank","transaction","fraud","scam"],
+    intro:"If you suspect payment fraud, act promptly and contact your bank through an official channel.",
+    steps:["Contact your bank or payment provider immediately using its official app, website, or known number.","In India, call 1930 promptly for financial cyber fraud and follow the official reporting process.","Report at cybercrime.gov.in and keep transaction IDs, screenshots, messages, and complaint references.","Never share your OTP, UPI PIN, or password. Do not pay anyone promising guaranteed recovery."],
+    note:"Quick reporting may help, but recovery of money is not guaranteed."
+  },
+  phishing:{
+    title:"Phishing & Fake Links",keywords:["phishing","fake link","email","message","otp","suspicious","link","sms"],
+    intro:"Phishing messages try to trick people into revealing private information, opening unsafe links, or sending money.",
+    steps:["Do not click suspicious links, download unknown attachments, or reply with personal details.","Do not enter passwords, PINs, or OTPs on pages opened from unexpected messages.","Open the service using its official app or by typing its known address yourself.","If you entered a password, change it through the official service using a trusted device.","If money was lost, contact your bank and report the incident promptly."],
+    note:"A professional-looking message or HTTPS padlock does not guarantee a website is genuine."
+  },
+  account:{
+    title:"Hacked Social Media or Email Account",keywords:["hacked","hack","instagram","facebook","account","login","stolen"],
+    intro:"Use the service's official account recovery process if someone may have accessed your account.",
+    steps:["Open the service's official account recovery page or app.","Change the password from a trusted device if you can still sign in.","Enable multi-factor authentication and sign out of unknown sessions.","Check recovery email addresses, phone numbers, and recent account activity.","Warn contacts if your account sent suspicious messages."],
+    note:"Avoid strangers who promise guaranteed account recovery in exchange for money."
+  },
+  shopping:{
+    title:"Online Shopping Scams",keywords:["shopping","shop","seller","offer","refund","delivery","store","parcel"],
+    intro:"Check a seller carefully before paying for an online product.",
+    steps:["Check independent reviews, seller details, and the return policy.","Be cautious of unbelievable offers and pressure to pay immediately.","Use the marketplace's official checkout where possible.","Keep order details and payment receipts.","If you suspect fraud, contact your payment provider and report it."],
+    note:"A very low price is a warning sign, but it does not alone prove fraud."
+  },
+  password:{
+    title:"Password & Privacy Security",keywords:["password","privacy","security","protect","personal data","2fa","permissions","otp"],
+    intro:"Good account security can reduce the risk of unauthorized access.",
+    steps:["Use a long, unique password for each important account.","Enable multi-factor authentication.","Never share OTPs, passwords, PINs, or recovery codes.","Review app permissions and remove access you do not need.","Keep your phone, browser, and applications updated."],
+    note:"These steps reduce risk but cannot eliminate every security threat."
+  },
+  report:{
+    title:"How to Report Cybercrime in India",keywords:["report","complaint","cybercrime","help","1930","police","evidence"],
+    intro:"Use official reporting channels and preserve relevant evidence.",
+    steps:["For financial cyber fraud, call 1930 promptly and follow the official instructions.","Visit cybercrime.gov.in to access the official reporting portal.","Keep relevant screenshots, transaction IDs, dates, phone numbers, and messages.","Contact your bank immediately if a payment or account is involved.","Save your complaint acknowledgement or reference number."],
+    note:"Use official resources and do not pay unofficial agents promising guaranteed recovery."
+  }
+};
+const form=document.getElementById("searchForm"), input=document.getElementById("searchInput"), message=document.getElementById("message");
+function showAnswer(id){
+  const d=kb[id]; if(!d)return;
+  document.getElementById("answerTitle").textContent=d.title;
+  document.getElementById("answerIntro").textContent=d.intro;
+  const list=document.getElementById("answerSteps");list.replaceChildren();
+  d.steps.forEach(s=>{const li=document.createElement("li");li.textContent=s;list.appendChild(li);});
+  document.getElementById("answerNote").textContent=d.note;
+  message.textContent="Showing guidance for: "+d.title;
+  document.getElementById("answer").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function searchKB(q){
+  q=q.toLowerCase().trim();
+  if(!q){message.textContent="Please enter a problem to search.";return;}
+  let winner=null,scoreBest=0;
+  for(const [id,d] of Object.entries(kb)){
+    let score=0;
+    d.keywords.forEach(k=>{if(q.includes(k))score+=k.includes(" ")?3:2;});
+    if(d.title.toLowerCase().includes(q))score+=4;
+    if(score>scoreBest){scoreBest=score;winner=id;}
+  }
+  if(!winner||scoreBest===0){
+    message.textContent="No exact match. Try UPI fraud, phishing, hacked account, shopping scam, password, or report.";
+    return;
+  }
+  showAnswer(winner);
+}
+form.addEventListener("submit",e=>{e.preventDefault();searchKB(input.value);});
+document.querySelectorAll(".card").forEach(b=>b.addEventListener("click",()=>showAnswer(b.dataset.id)));
+</script>
+</body>
+</html>
